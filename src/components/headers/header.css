@@ -1,0 +1,110 @@
+
+:root {
+    --max-width: 1000px;  
+    background-color: #111;
+    color: #dfdfdf;
+
+    --background-color: #111;
+    --background-primary: #333;
+    --color: #dfdfdf;
+
+    /* Padding */
+    --padding: 1rem;
+
+    /* width */
+    --header-nav-max-width: 550px;
+
+    /* transition */
+    --transition-duration: .5s;
+
+    /* Border */
+    --border-radius-sm: .5rem;
+    --border-radius-normal: .8rem;
+    --border-radius-l: 1rem;
+    --border-radius-xl: 1.5rem;
+    --border-radius-circle: 50px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+a {
+  font-weight: 500;
+  color: orange;
+  text-decoration: inherit;
+  transition: var(--transition-duration);
+}
+a:hover {
+  color: gold;
+}
+
+header{
+  background-color: var(--background-primary);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding); 
+  border-bottom-right-radius: var(--border-radius-sm);
+  border-bottom-left-radius: var(--border-radius-sm);
+  max-width: var(--max-width);
+}
+.header__child{
+  flex: 1;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+}
+ 
+header ul{
+  flex: 2 !important;
+  display: flex;
+  list-style-type: none;
+  /*background-color: red;*/
+  justify-content: space-between;
+  align-items: center;
+  /*max-width: var(--header-nav-max-width);*/
+}
+.header__button {
+  display: grid;
+  place-content: center;
+  gap: 3px;
+  padding: 1px;
+  background-color: unset;
+  background-color: #0000000;
+  /*position: relative;*/
+  border: unset;
+}
+.header__button div{
+  width: 35px;
+  height: 3px;
+  border-radius: var(--border-radius-sm);
+  background-color: white;
+  /*position: absolute;*/
+  transition: .5s;
+}
+.header__button.clicked div:nth-of-type(2){
+  display: none;
+}
+
+.header__button.clicked div:nth-of-type(1){
+  transform: translateY(5px) rotate(45deg);
+}
+ 
+
+.header__button.clicked div:nth-of-type(3){
+  transform:  rotate(-45deg);
+} 
+
+@media screen and (max-width: 650px){
+  header ul{
+    display: none;
+  }
+}
